@@ -14,7 +14,7 @@ include(xplatform)
 include_directories("${PROJECT_SOURCE_DIR}/../../foundation")
 link_directories("${PROJECT_SOURCE_DIR}/../../foundation/${BUILD_DIR}")
 
-add_executable(HelloWorldConsole main.cc stdneb.cc)
+add_executable(HelloWorldConsole ${SOURCES})
 target_link_libraries(HelloWorldConsole NebulaXFoundation${CMAKE_DEBUG_POSTFIX})
 set_target_properties(HelloWorldConsole PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "stdneb.h")
 cotire(HelloWorldConsole)
