@@ -240,7 +240,7 @@ extern bool Validate();
     Replacement global new operator.
 */
 __forceinline void*
-__cdecl operator new(size_t size)
+__cdecl operator new(size_t size) throw(std::bad_alloc)
 {
     return Memory::Alloc(Memory::ObjectHeap, size);
 }
@@ -250,7 +250,7 @@ __cdecl operator new(size_t size)
     Replacement global new[] operator.
 */
 __forceinline void*
-__cdecl operator new[](size_t size)
+__cdecl operator new[](size_t size) throw(std::bad_alloc)
 {
     return Memory::Alloc(Memory::ObjectArrayHeap, size);
 }
@@ -260,7 +260,7 @@ __cdecl operator new[](size_t size)
     Replacement global delete operator.
 */
 __forceinline void
-__cdecl operator delete(void* p)
+__cdecl operator delete(void* p) throw()
 {
     Memory::Free(Memory::ObjectHeap, p);
 }
@@ -270,7 +270,7 @@ __cdecl operator delete(void* p)
     Replacement global delete[] operator.
 */
 __forceinline void
-__cdecl operator delete[](void* p)
+__cdecl operator delete[](void* p) throw()
 {
     Memory::Free(Memory::ObjectArrayHeap, p);
 }
