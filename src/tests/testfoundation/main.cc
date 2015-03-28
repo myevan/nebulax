@@ -69,6 +69,7 @@ __cdecl main()
     testRunner->AttachTestCase(ArrayTest::Create());
     testRunner->AttachTestCase(StackTest::Create());
     testRunner->AttachTestCase(ListTest::Create());
+    testRunner->AttachTestCase(QueueTest::Create());
     testRunner->AttachTestCase(DictionaryTest::Create());
     testRunner->AttachTestCase(HashTableTest::Create());
     testRunner->AttachTestCase(FixedArrayTest::Create());
@@ -91,7 +92,6 @@ __cdecl main()
     testRunner->AttachTestCase(StreamServerTest::Create());
     testRunner->AttachTestCase(AttributeTableTest::Create());
     testRunner->AttachTestCase(MediaTypeTest::Create());
-    testRunner->AttachTestCase(QueueTest::Create());
     testRunner->AttachTestCase(MemoryStreamTest::Create());
     testRunner->AttachTestCase(FileServerTest::Create());
     testRunner->AttachTestCase(TextReaderWriterTest::Create());
