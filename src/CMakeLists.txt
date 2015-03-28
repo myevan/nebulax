@@ -6,10 +6,13 @@ option(N_BUILD_TESTS "Build Tests" ON)
 option(N_BUILD_TUTORIALS "Build Tutorials" ON)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-inline-new-delete -Wno-deprecated-declarations") 
 
 include(cotire)
 include(xplatform)
-include(nebulax)
+
+include_directories("${PROJECT_SOURCE_DIR}/foundation")
+include_directories("${PROJECT_SOURCE_DIR}/../platforms/${XPLATFORM_NAME}/zlib-1.2.8/include")
 
 add_subdirectory(foundation)
 

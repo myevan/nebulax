@@ -21,9 +21,11 @@
 #include "guidtest.h"
 #include "proxytest.h"
 #include "varianttest.h"
+#include "runlengthcodectest.h"
 
 #if TODO
-#include "runlengthcodectest.h"
+#include "threadtest.h"
+#include "memorypooltest.h"
 #include "uritest.h"
 #include "float4test.h"
 #include "matrix44test.h"
@@ -43,8 +45,6 @@
 #include "streamservertest.h"
 #include "luaservertest.h"
 #include "zipfstest.h"
-#include "threadtest.h"
-#include "memorypooltest.h"
 #include "excelxmlreadertest.h"
 #endif
 
@@ -78,15 +78,16 @@ __cdecl main()
     testRunner->AttachTestCase(GuidTest::Create());
     testRunner->AttachTestCase(ProxyTest::Create());
     testRunner->AttachTestCase(VariantTest::Create());
-#ifdef TODO
     testRunner->AttachTestCase(RunLengthCodecTest::Create());
+#ifdef TODO
+    testRunner->AttachTestCase(ThreadTest::Create());
+    testRunner->AttachTestCase(MemoryPoolTest::Create());
     testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(Float4Test::Create());
     testRunner->AttachTestCase(Matrix44Test::Create());
     testRunner->AttachTestCase(CmdLineArgsTest::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
-    testRunner->AttachTestCase(MemoryPoolTest::Create());
     testRunner->AttachTestCase(ZipFSTest::Create());
     testRunner->AttachTestCase(LuaServerTest::Create());
     testRunner->AttachTestCase(StreamServerTest::Create());
@@ -99,7 +100,6 @@ __cdecl main()
     testRunner->AttachTestCase(XmlReaderWriterTest::Create());
     testRunner->AttachTestCase(BinaryReaderWriterTest::Create());
     testRunner->AttachTestCase(IOInterfaceTest::Create());
-    testRunner->AttachTestCase(ThreadTest::Create());
 #endif
     testRunner->Run(); 
 

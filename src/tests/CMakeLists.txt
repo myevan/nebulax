@@ -1,19 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
-
-project(HelloWorldTests)
-
-if(NOT CMAKE_MODULE_PATH)
-    set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../cmake")
-endif()
-
-include(xplatform)
-include(nebulax)
-
-include_directories("${PROJECT_SOURCE_DIR}")
-include_directories("${PROJECT_SOURCE_DIR}/../foundation")
-
-link_directories("${PROJECT_SOURCE_DIR}/${BUILD_DIR}")
-link_directories("${PROJECT_SOURCE_DIR}/../foundation/${BUILD_DIR}")
+include_directories("${NebulaX_SOURCE_DIR}/tests")
 
 add_library(NebulaXTestBase
     testbase/testcase.cc
@@ -37,7 +22,9 @@ add_executable(NebulaXTestFoundation
     testfoundation/guidtest.cc
     testfoundation/proxytest.cc
     testfoundation/varianttest.cc
-    #testfoundation/runlengthcodectest.cc
+    testfoundation/runlengthcodectest.cc
+    #testfoundation/threadtest.cc
+    #testfoundation/memorypooltest.cc
     #testfoundation/uritest.cc
     #testfoundation/float4test.cc
     #testfoundation/matrix44test.cc
@@ -51,18 +38,14 @@ add_executable(NebulaXTestFoundation
     #testfoundation/iointerfacetest.cc
     #testfoundation/luaservertest.cc
     #testfoundation/mediatypetest.cc
-    #testfoundation/memorypooltest.cc
     #testfoundation/memorystreamtest.cc
     #testfoundation/messagereaderwritertest.cc
     #testfoundation/simpletreetest.cc
     #testfoundation/streamservertest.cc
     #testfoundation/testattrs.cc
     #testfoundation/textreaderwritertest.cc
-    #testfoundation/threadtest.cc
     #testfoundation/xmlreaderwritertest.cc
     #testfoundation/zipfstest.cc
 )
 
-target_link_libraries(NebulaXTestFoundation 
-    NebulaXFoundation${CMAKE_DEBUG_POSTFIX} 
-    NebulaXTestBase${CMAKE_DEBUG_POSTFIX})
+target_link_libraries(NebulaXTestFoundation NebulaXFoundation NebulaXTestBase)

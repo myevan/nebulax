@@ -5,4 +5,6 @@ if(NOT CMAKE_BUILD_TYPE)
     message("No CMAKE_BUILD_TYPE specified, defaulting to ${CMAKE_BUILD_TYPE}")
 endif()
 
-set(BUILD_DIR "__build")
+if (APPLE)
+    set(XPLATFORM_NAME osx)
+endif()

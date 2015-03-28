@@ -1,11 +1,3 @@
-cmake_minimum_required(VERSION 2.8)
-
-project(NebulaXFoundation)
-
-if(NOT CMAKE_MODULE_PATH)
-    set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../cmake")
-endif()
-
 set(COMMON_SOURCES
     stdneb.cc 
     core/debug.cc
@@ -17,11 +9,16 @@ set(COMMON_SOURCES
     io/ioserver.cc
     io/uri.cc
     io/consolehandler.cc 
+    threading/thread.cc
     util/blob.cc 
     util/crc.cc
     util/string.cc 
     util/cmdlineargs.cc
+    util/runlengthcodec.h
     util/runlengthcodec.cc
+    #memory/debug/memorypagehandler.cc
+    #memory/memorypool.cc
+    #memory/memorypoolpage.cc
     #app/application.cc
     #app/consoleapplication.cc
     #attr/attributecontainer.cc
@@ -67,9 +64,6 @@ set(COMMON_SOURCES
     #math/bbox.cc
     #math/line.cc
     #math/sphere_.cc
-    #memory/debug/memorypagehandler.cc
-    #memory/memorypool.cc
-    #memory/memorypoolpage.cc
     #messaging/asyncport.cc
     #messaging/dispatcher.cc
     #messaging/handler.cc
@@ -98,7 +92,6 @@ set(COMMON_SOURCES
     #scripting/lua/luaserver.cc
     #scripting/scriptserver.cc
     #system/base/systeminfobase.cc
-    #threading/thread.cc
     #timing/base/calendartimebase.cc
 )
 
@@ -108,24 +101,18 @@ if (APPLE)
         core/posix/posixsysfunc.cc
         io/posix/posixconsolehandler.cc
         io/posix/posixfswrapper.cc
-        memory/posix/posixmemory.cc
         memory/posix/posixheap.cc
+        memory/posix/posixmemory.cc
+        memory/posix/posixmemoryconfig.cc
         threading/posix/posixthread.cc
         util/posix/posixguid.cc
         math/sce/sce_float4.cc
         math/sce/sce_matrix44.cc
         math/sce/sce_plane.cc
     )
-    set(XPLATFORM_NAME osx)
 endif()
 
 add_definitions("-D__NOZIP__")
-
-include(cotire)
-include(xplatform)
-include(nebulax)
-include_directories("${PROJECT_SOURCE_DIR}")
-include_directories("${PROJECT_SOURCE_DIR}/../../platforms/${XPLATFORM_NAME}/zlib-1.2.8/include")
 
 add_library(NebulaXFoundation ${SOURCES})
 set_target_properties(NebulaXFoundation PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "stdneb.h")
