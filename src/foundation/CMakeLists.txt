@@ -25,6 +25,7 @@ set(SOURCES
 
 include(cotire)
 include(xplatform)
+include(nebulax)
 include_directories("${PROJECT_SOURCE_DIR}")
 
 add_library(NebulaXFoundation ${SOURCES})
