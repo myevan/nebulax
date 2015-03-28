@@ -10,14 +10,14 @@
 #include "stringtest.h"
 #include "atomtest.h"
 #include "arraytest.h"
+#include "stacktest.h"
+#include "listtest.h"
 #include "dictionarytest.h"
 #include "hashtabletest.h"
 
 #if TODO
 #include "attributecontainertest.h"
 
-#include "stacktest.h"
-#include "listtest.h"
 #include "fixedarraytest.h"
 #include "fixedtabletest.h"
 #include "queuetest.h"
@@ -67,6 +67,8 @@ __cdecl main()
     testRunner->AttachTestCase(StringTest::Create());   
     testRunner->AttachTestCase(AtomTest::Create());
     testRunner->AttachTestCase(ArrayTest::Create());
+    testRunner->AttachTestCase(StackTest::Create());
+    testRunner->AttachTestCase(ListTest::Create());
     testRunner->AttachTestCase(DictionaryTest::Create());
     testRunner->AttachTestCase(HashTableTest::Create());
 #ifdef TODO
@@ -85,8 +87,6 @@ __cdecl main()
     testRunner->AttachTestCase(AttributeTableTest::Create());
     testRunner->AttachTestCase(MediaTypeTest::Create());
     testRunner->AttachTestCase(URITest::Create());
-    testRunner->AttachTestCase(StackTest::Create());
-    testRunner->AttachTestCase(ListTest::Create());
     testRunner->AttachTestCase(FixedArrayTest::Create());
     testRunner->AttachTestCase(FixedTableTest::Create());
     testRunner->AttachTestCase(QueueTest::Create());

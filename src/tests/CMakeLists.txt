@@ -26,6 +26,7 @@ add_executable(NebulaXTestFoundation
     testfoundation/stringtest.cc
     testfoundation/atomtest.cc
     testfoundation/arraytest.cc
+    testfoundation/stacktest.cc
     testfoundation/listtest.cc
     testfoundation/dictionarytest.cc
     testfoundation/hashtabletest.cc
@@ -51,7 +52,6 @@ add_executable(NebulaXTestFoundation
     #testfoundation/ringbuffertest.cc
     #testfoundation/runlengthcodectest.cc
     #testfoundation/simpletreetest.cc
-    #testfoundation/stacktest.cc
     #testfoundation/streamservertest.cc
     #testfoundation/testattrs.cc
     #testfoundation/textreaderwritertest.cc
