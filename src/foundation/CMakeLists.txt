@@ -11,6 +11,7 @@ set(COMMON_SOURCES
     io/binarywriter.cc
     io/console.cc
     io/consolehandler.cc 
+    io/debug/iopagehandler.cc
     io/filestream.cc
     io/ioserver.cc
     io/memorystream.cc
@@ -65,7 +66,6 @@ set(COMMON_SOURCES
     #http/httpresponsewriter.cc
     #http/httpserver.cc
     #http/httpstatus.cc
-    #io/debug/iopagehandler.cc
     #io/excelxmlreader.cc
     #math/bbox.cc
     #math/line.cc
