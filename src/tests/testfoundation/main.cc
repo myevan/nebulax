@@ -23,17 +23,17 @@
 #include "varianttest.h"
 #include "runlengthcodectest.h"
 #include "cmdlineargstest.h"
+#include "threadtest.h"
+#include "memorystreamtest.h"
+#include "textreaderwritertest.h"
 
 #if TODO
-#include "threadtest.h"
 #include "memorypooltest.h"
 #include "float4test.h"
 #include "matrix44test.h"
 #include "attributecontainertest.h"
 
-#include "memorystreamtest.h"
 #include "fileservertest.h"
-#include "textreaderwritertest.h"
 #include "messagereaderwritertest.h"
 #include "xmlreaderwritertest.h"
 #include "binaryreaderwritertest.h"
@@ -79,10 +79,12 @@ __cdecl main()
     testRunner->AttachTestCase(VariantTest::Create());
     testRunner->AttachTestCase(RunLengthCodecTest::Create());
     testRunner->AttachTestCase(CmdLineArgsTest::Create());
-#ifdef TODO
-    testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(ThreadTest::Create());
+    testRunner->AttachTestCase(MemoryStreamTest::Create());
+    testRunner->AttachTestCase(TextReaderWriterTest::Create());
+#ifdef TODO
     testRunner->AttachTestCase(MemoryPoolTest::Create());
+    testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(Float4Test::Create());
     testRunner->AttachTestCase(Matrix44Test::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
@@ -92,9 +94,7 @@ __cdecl main()
     testRunner->AttachTestCase(StreamServerTest::Create());
     testRunner->AttachTestCase(AttributeTableTest::Create());
     testRunner->AttachTestCase(MediaTypeTest::Create());
-    testRunner->AttachTestCase(MemoryStreamTest::Create());
     testRunner->AttachTestCase(FileServerTest::Create());
-    testRunner->AttachTestCase(TextReaderWriterTest::Create());
     testRunner->AttachTestCase(MessageReaderWriterTest::Create());
     testRunner->AttachTestCase(XmlReaderWriterTest::Create());
     testRunner->AttachTestCase(BinaryReaderWriterTest::Create());

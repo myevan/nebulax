@@ -5,16 +5,24 @@ set(COMMON_SOURCES
     core/rtti.cc
     core/factory.cc
     core/coreserver.cc
+    io/binaryreader.cc
+    io/binarywriter.cc
     io/console.cc
-    io/ioserver.cc
-    io/uri.cc
     io/consolehandler.cc 
+    io/filestream.cc
+    io/ioserver.cc
+    io/memorystream.cc
+    io/stream.cc
+    io/streamreader.cc
+    io/streamwriter.cc
+    io/textreader.cc
+    io/textwriter.cc
+    io/uri.cc
     threading/thread.cc
     util/blob.cc 
     util/crc.cc
     util/string.cc 
     util/cmdlineargs.cc
-    util/runlengthcodec.h
     util/runlengthcodec.cc
     #memory/debug/memorypagehandler.cc
     #memory/memorypool.cc
@@ -41,19 +49,10 @@ set(COMMON_SOURCES
     #interface/interfaceprotocol.cc
     #interface/iointerface.cc
     #interface/iointerfacehandler.cc
-    #io/binaryreader.cc
-    #io/binarywriter.cc
     #io/console.cc
     #io/consolehandler.cc
     #io/debug/iopagehandler.cc
     #io/excelxmlreader.cc
-    #io/filestream.cc
-    #io/memorystream.cc
-    #io/stream.cc
-    #io/streamreader.cc
-    #io/streamwriter.cc
-    #io/textreader.cc
-    #io/textwriter.cc
     #io/xmlreader.cc
     #io/xmlwriter.cc
     #io/zipfilestream.cc

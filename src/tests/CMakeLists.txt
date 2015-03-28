@@ -24,8 +24,10 @@ add_executable(NebulaXTestFoundation
     testfoundation/varianttest.cc
     testfoundation/runlengthcodectest.cc
     testfoundation/cmdlineargstest.cc
+    testfoundation/threadtest.cc
+    testfoundation/memorystreamtest.cc
+    testfoundation/textreaderwritertest.cc
     #testfoundation/uritest.cc
-    #testfoundation/threadtest.cc
     #testfoundation/memorypooltest.cc
     #testfoundation/float4test.cc
     #testfoundation/matrix44test.cc
@@ -38,14 +40,12 @@ add_executable(NebulaXTestFoundation
     #testfoundation/iointerfacetest.cc
     #testfoundation/luaservertest.cc
     #testfoundation/mediatypetest.cc
-    #testfoundation/memorystreamtest.cc
     #testfoundation/messagereaderwritertest.cc
     #testfoundation/simpletreetest.cc
     #testfoundation/streamservertest.cc
     #testfoundation/testattrs.cc
-    #testfoundation/textreaderwritertest.cc
     #testfoundation/xmlreaderwritertest.cc
     #testfoundation/zipfstest.cc
 )
 
-target_link_libraries(NebulaXTestFoundation NebulaXFoundation NebulaXTestBase)
+target_link_libraries(NebulaXTestFoundation NebulaXFoundation NebulaXTestBase ${SYSTEM_LIBS})

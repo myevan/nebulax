@@ -7,4 +7,7 @@ endif()
 
 if (APPLE)
     set(XPLATFORM_NAME osx)
+    find_library(CORE_FOUNDATION_LIBRARY CoreFoundation)
+    mark_as_advanced(CORE_FOUNDATION_LIBRARY)
+    set(SYSTEM_LIBS ${CORE_FOUNDATION_LIBRARY})
 endif()
