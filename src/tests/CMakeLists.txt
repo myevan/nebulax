@@ -34,16 +34,19 @@ add_executable(NebulaXTestFoundation
     testfoundation/fixedarraytest.cc
     testfoundation/fixedtabletest.cc
     testfoundation/guidtest.cc
+    testfoundation/varianttest.cc
+    #testfoundation/uritest.cc
+    #testfoundation/float4test.cc
+    #testfoundation/matrix44test.cc
     #testfoundation/cmdlineargstest.cc
     #testfoundation/attributecontainertest.cc
     #testfoundation/attributetabletest.cc
+
     #testfoundation/binaryreaderwritertest.cc
     #testfoundation/excelxmlreadertest.cc
     #testfoundation/fileservertest.cc
-    #testfoundation/float4test.cc
     #testfoundation/iointerfacetest.cc
     #testfoundation/luaservertest.cc
-    #testfoundation/matrix44test.cc
     #testfoundation/mediatypetest.cc
     #testfoundation/memorypooltest.cc
     #testfoundation/memorystreamtest.cc
@@ -56,8 +59,6 @@ add_executable(NebulaXTestFoundation
     #testfoundation/testattrs.cc
     #testfoundation/textreaderwritertest.cc
     #testfoundation/threadtest.cc
-    #testfoundation/uritest.cc
-    #testfoundation/varianttest.cc
     #testfoundation/xmlreaderwritertest.cc
     #testfoundation/zipfstest.cc
 )

@@ -6,25 +6,20 @@ if(NOT CMAKE_MODULE_PATH)
     set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../cmake")
 endif()
 
-set(SOURCES
+set(COMMON_SOURCES
     stdneb.cc 
     core/debug.cc
     core/refcounted.cc
     core/rtti.cc
     core/factory.cc
     core/coreserver.cc
-    core/posix/posixsysfunc.cc
     io/console.cc
-    io/posix/posixconsolehandler.cc
-    io/posix/posixfswrapper.cc
+    io/ioserver.cc
+    io/uri.cc
     io/consolehandler.cc 
-    memory/posix/posixmemory.cc
-    memory/posix/posixheap.cc
-    threading/posix/posixthread.cc
     util/blob.cc 
     util/crc.cc
     util/string.cc 
-    util/posix/posixguid.cc
     util/cmdlineargs.cc
     util/runlengthcodec.cc
     #app/application.cc
@@ -57,14 +52,12 @@ set(SOURCES
     #io/debug/iopagehandler.cc
     #io/excelxmlreader.cc
     #io/filestream.cc
-    #io/ioserver.cc
     #io/memorystream.cc
     #io/stream.cc
     #io/streamreader.cc
     #io/streamwriter.cc
     #io/textreader.cc
     #io/textwriter.cc
-    #io/uri.cc
     #io/xmlreader.cc
     #io/xmlwriter.cc
     #io/zipfilestream.cc
@@ -111,10 +104,30 @@ set(SOURCES
     #timing/base/calendartimebase.cc
 )
 
+if (APPLE)
+    set(SOURCES
+        ${COMMON_SOURCES}
+        core/posix/posixsysfunc.cc
+        io/posix/posixconsolehandler.cc
+        io/posix/posixfswrapper.cc
+        memory/posix/posixmemory.cc
+        memory/posix/posixheap.cc
+        threading/posix/posixthread.cc
+        util/posix/posixguid.cc
+        math/sce/sce_float4.cc
+        math/sce/sce_matrix44.cc
+        math/sce/sce_plane.cc
+    )
+    set(XPLATFORM_NAME osx)
+endif()
+
+add_definitions("-D__NOZIP__")
+
 include(cotire)
 include(xplatform)
 include(nebulax)
 include_directories("${PROJECT_SOURCE_DIR}")
+include_directories("${PROJECT_SOURCE_DIR}/../../platforms/${XPLATFORM_NAME}/zlib-1.2.8/include")
 
 add_library(NebulaXFoundation ${SOURCES})
 set_target_properties(NebulaXFoundation PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "stdneb.h")

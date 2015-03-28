@@ -18,29 +18,29 @@
 #include "fixedarraytest.h"
 #include "fixedtabletest.h"
 #include "guidtest.h"
+#include "varianttest.h"
 
 #if TODO
+#include "uritest.h"
+#include "float4test.h"
+#include "matrix44test.h"
 #include "cmdlineargstest.h"
 #include "attributecontainertest.h"
 
 #include "memorystreamtest.h"
 #include "fileservertest.h"
-#include "uritest.h"
 #include "textreaderwritertest.h"
 #include "messagereaderwritertest.h"
 #include "xmlreaderwritertest.h"
 #include "binaryreaderwritertest.h"
 #include "uritest.h"
 #include "mediatypetest.h"
-#include "varianttest.h"
 #include "iointerfacetest.h"
 #include "attributetabletest.h"
 #include "streamservertest.h"
 #include "luaservertest.h"
 #include "zipfstest.h"
 #include "proxytest.h"
-#include "float4test.h"
-#include "matrix44test.h"
 #include "threadtest.h"
 #include "memorypooltest.h"
 #include "runlengthcodectest.h"
@@ -74,22 +74,23 @@ __cdecl main()
     testRunner->AttachTestCase(FixedArrayTest::Create());
     testRunner->AttachTestCase(FixedTableTest::Create());
     testRunner->AttachTestCase(GuidTest::Create());
+    testRunner->AttachTestCase(VariantTest::Create());
 #ifdef TODO
+    testRunner->AttachTestCase(URITest::Create());
+    testRunner->AttachTestCase(Float4Test::Create());
+    testRunner->AttachTestCase(Matrix44Test::Create());
     testRunner->AttachTestCase(CmdLineArgsTest::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
     testRunner->AttachTestCase(RingBufferTest::Create());
     testRunner->AttachTestCase(RunLengthCodecTest::Create());
     testRunner->AttachTestCase(MemoryPoolTest::Create());
-    testRunner->AttachTestCase(Matrix44Test::Create());
-    testRunner->AttachTestCase(Float4Test::Create());
     testRunner->AttachTestCase(ProxyTest::Create());
     testRunner->AttachTestCase(ZipFSTest::Create());
     testRunner->AttachTestCase(LuaServerTest::Create());
     testRunner->AttachTestCase(StreamServerTest::Create());
     testRunner->AttachTestCase(AttributeTableTest::Create());
     testRunner->AttachTestCase(MediaTypeTest::Create());
-    testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(QueueTest::Create());
     testRunner->AttachTestCase(MemoryStreamTest::Create());
     testRunner->AttachTestCase(FileServerTest::Create());
@@ -97,7 +98,6 @@ __cdecl main()
     testRunner->AttachTestCase(MessageReaderWriterTest::Create());
     testRunner->AttachTestCase(XmlReaderWriterTest::Create());
     testRunner->AttachTestCase(BinaryReaderWriterTest::Create());
-    testRunner->AttachTestCase(VariantTest::Create());
     testRunner->AttachTestCase(IOInterfaceTest::Create());
     testRunner->AttachTestCase(ThreadTest::Create());
 #endif
