@@ -25,6 +25,9 @@ set(COMMON_SOURCES
     io/zipfs/zipdirentry.cc
     io/zipfs/zipfileentry.cc
     io/zipfs/zipfilesystem.cc
+    memory/debug/memorypagehandler.cc
+    memory/memorypool.cc
+    memory/memorypoolpage.cc
     messaging/asyncport.cc
     messaging/dispatcher.cc
     messaging/handler.cc
@@ -44,9 +47,6 @@ set(COMMON_SOURCES
     #interface/interfaceprotocol.cc
     #interface/iointerface.cc
     #interface/iointerfacehandler.cc
-    #memory/memorypool.cc
-    #memory/debug/memorypagehandler.cc
-    #memory/memorypoolpage.cc
     #app/application.cc
     #app/consoleapplication.cc
     #attr/attributecontainer.cc

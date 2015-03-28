@@ -36,10 +36,10 @@
 #include "matrix44test.h"
 #include "uritest.h"
 #include "zipfstest.h"
+#include "memorypooltest.h"
 
 #if TODO
 #include "iointerfacetest.h"
-#include "memorypooltest.h"
 #include "attributecontainertest.h"
 
 #include "attributetabletest.h"
@@ -92,9 +92,9 @@ __cdecl main()
     testRunner->AttachTestCase(Matrix44Test::Create());
     testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(ZipFSTest::Create());
+    testRunner->AttachTestCase(MemoryPoolTest::Create());
 #ifdef TODO
     testRunner->AttachTestCase(IOInterfaceTest::Create());
-    testRunner->AttachTestCase(MemoryPoolTest::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
     testRunner->AttachTestCase(LuaServerTest::Create());
