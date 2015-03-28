@@ -1,371 +1,41 @@
-INCLUDE_DIRECTORIES(${Nebula3_SOURCE_DIR}/foundation/
-                    ${Nebula3_SOURCE_DIR}/extlibs/)
+cmake_minimum_required(VERSION 2.8)
 
-SET(Nebula3Foundation_SRCS
-    app/application.cc
-    app/application.h
-    app/consoleapplication.cc
-    app/consoleapplication.h
-    attr/accessmode.h
-    attr/attribute.h
-    attr/attributecontainer.cc
-    attr/attributecontainer.h
-    attr/attributedefinition.h
-    attr/attributedefinitionbase.cc
-    attr/attributedefinitionbase.h
-    attr/attributetable.cc
-    attr/attributetable.h
-    attr/attrid.cc
-    attr/attrid.h
-    attr/blobattrid.h
-    attr/boolattrid.h
-    attr/float4attrid.h
-    attr/floatattrid.h
-    attr/guidattrid.h
-    attr/intattrid.h
-    attr/matrix44attrid.h
-    attr/stringattrid.h
-    attr/valuetype.h
-    commands/iolibrary.cc
-    commands/iolibrary.h
-    commands/stdlibrary.cc
-    commands/stdlibrary.h
-    core/config.h
-    core/coreserver.cc
-    core/coreserver.h
-    core/debug/corepagehandler.cc
-    core/debug/corepagehandler.h
+project(foundation)
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Debug")
+    message("No CMAKE_BUILD_TYPE specified, defaulting to ${CMAKE_BUILD_TYPE}")
+endif()
+
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../cmake")
+set(CMAKE_DEBUG_POSTFIX "_d")
+
+set(SOURCES
+    stdneb.cc 
     core/debug.cc
-    core/debug.h
-    core/factory.cc
-    core/factory.h
-    core/ptr.h
-    core/refcounted.cc
-    core/refcounted.h
-    core/refcountedlist.cc
-    core/refcountedlist.h
-    core/rtti.cc
-    core/rtti.h
-    core/singleton.h
-    core/sysfunc.h
-    core/types.h
-    debug/minidump.h
-    foundation.h
-    http/base64writer.cc
-    http/base64writer.h
-    http/defaulthttprequesthandler.cc
-    http/defaulthttprequesthandler.h
-    http/httpmethod.h
-    http/httprequest.cc
-    http/httprequest.h
-    http/httprequesthandler.cc
-    http/httprequesthandler.h
-    http/httprequestreader.cc
-    http/httprequestreader.h
-    http/httpresponsewriter.cc
-    http/httpresponsewriter.h
-    http/httpserver.cc
-    http/httpserver.h
-    http/httpstatus.cc
-    http/httpstatus.h
-    interface/base/iointerfacehandlerbase.cc
-    interface/base/iointerfacehandlerbase.h
-    interface/interfaceprotocol.cc
-    interface/interfaceprotocol.h
-    interface/iointerface.cc
-    interface/iointerface.h
-    interface/iointerfacehandler.cc
-    interface/iointerfacehandler.h
-    io/assign.h
-    io/binaryreader.cc
-    io/binaryreader.h
-    io/binarywriter.cc
-    io/binarywriter.h
+    memory/posix/posixmemory.cc
     io/console.cc
-    io/console.h
-    io/consolehandler.cc
-    io/consolehandler.h
-    io/debug/iopagehandler.cc
-    io/debug/iopagehandler.h
-    io/excelxmlreader.cc
-    io/excelxmlreader.h
-    io/filestream.cc
-    io/filestream.h
-    io/filetime.h
-    io/fswrapper.h
-    io/ioserver.cc
-    io/ioserver.h
-    io/mediatype.h
-    io/memorystream.cc
-    io/memorystream.h
-    io/stream.cc
-    io/stream.h
-    io/streamreader.cc
-    io/streamreader.h
-    io/streamwriter.cc
-    io/streamwriter.h
-    io/textreader.cc
-    io/textreader.h
-    io/textwriter.cc
-    io/textwriter.h
-    io/uri.cc
-    io/uri.h
-    io/xmlreader.cc
-    io/xmlreader.h
-    io/xmlwriter.cc
-    io/xmlwriter.h
-    io/zipfilestream.cc
-    io/zipfilestream.h
-    io/zipfs/ziparchive.cc
-    io/zipfs/ziparchive.h
-    io/zipfs/zipdirentry.cc
-    io/zipfs/zipdirentry.h
-    io/zipfs/zipfileentry.cc
-    io/zipfs/zipfileentry.h
-    io/zipfs/zipfilesystem.cc
-    io/zipfs/zipfilesystem.h
-    math/angularpfeedbackloop.h
-    math/bbox.cc
-    math/bbox.h
-    math/clipstatus.h
-    math/float2.h
-    math/float4.h
-    math/line.cc
-    math/line.h
-    math/matrix44.h
-    math/noise.h
-    math/pfeedbackloop.h
-    math/pidfeedbackloop.h
-    math/plane.h
-    math/point.h
-    math/polar.h
-    math/pquatfeedbackloop.h
-    math/quaternion.h
-    math/rectangle.h
-    math/scalar.h
-    math/sphere_.cc
-    math/sphere_.h
-    math/transform44.h
-    math/vector.h
-    memory/debug/memorypagehandler.cc
-    memory/debug/memorypagehandler.h
-    memory/heap.h
-    memory/memory.h
-    memory/memorypool.cc
-    memory/memorypool.h
-    memory/memorypoolpage.cc
-    memory/memorypoolpage.h
-    messaging/asyncport.cc
-    messaging/asyncport.h
-    messaging/dispatcher.cc
-    messaging/dispatcher.h
-    messaging/handler.cc
-    messaging/handler.h
-    messaging/id.h
-    messaging/message.cc
-    messaging/message.h
-    messaging/messagereader.cc
-    messaging/messagereader.h
-    messaging/messagewriter.cc
-    messaging/messagewriter.h
-    messaging/port.cc
-    messaging/port.h
-    net/ipaddress.h
-    net/socket.cc
-    net/socket.h
-    net/tcpclient.cc
-    net/tcpclient.h
-    net/tcpclientconnection.cc
-    net/tcpclientconnection.h
-    net/tcpserver.cc
-    net/tcpserver.h
-    remote/remotecontrol.cc
-    remote/remotecontrol.h
-    remote/remotecontrolproxy.cc
-    remote/remotecontrolproxy.h
-    remote/remoteinterface.cc
-    remote/remoteinterface.h
-    remote/remotemessagehandler.cc
-    remote/remotemessagehandler.h
-    remote/remoteprotocol.cc
-    remote/remoteprotocol.h
-    remote/remoteprotocol.nidl
-    remote/remoterequest.cc
-    remote/remoterequest.h
-    remote/remoterequesthandler.cc
-    remote/remoterequesthandler.h
-    remote/remoterequestreader.cc
-    remote/remoterequestreader.h
-    remote/remoteresponsewriter.cc
-    remote/remoteresponsewriter.h
-    remote/remotestatus.cc
-    remote/remotestatus.h
-    scripting/arg.h
-    scripting/argsblock.cc
-    scripting/argsblock.h
-    scripting/command.cc
-    scripting/command.h
-    scripting/debug/scriptingpagehandler.cc
-    scripting/debug/scriptingpagehandler.h
-    scripting/lua/luaserver.cc
-    scripting/lua/luaserver.h
-    scripting/scriptserver.cc
-    scripting/scriptserver.h
-    stdneb.cc
-    stdneb.h
-    system/appentry.h
-    system/byteorder.h
-    system/cpu.h
-    system/base/systeminfobase.cc
-    system/base/systeminfobase.h
-    threading/barrier.h
-    threading/criticalsection.h
-    threading/event.h
-    threading/interlocked.h
-    threading/safepriorityqueue.h
-    threading/safequeue.h
-    threading/thread.cc
-    threading/thread.h
-    timing/base/calendartimebase.cc
-    timing/base/calendartimebase.h
-    timing/calendartime.h
-    timing/time.h
-    timing/timer.h
-    util/array.h
-    util/atom.h
-    util/blob.cc
-    util/blob.h
-    util/cmdlineargs.cc
-    util/cmdlineargs.h
-    util/crc.cc
-    util/crc.h
-    util/dictionary.h
-    util/fixedarray.h
-    util/fixedtable.h
-    util/fourcc.h
-    util/guid.h
-    util/hashtable.h
-    util/keyvaluepair.h
-    util/list.h
-    util/proxy.h
-    util/quadtree.h
-    util/queue.h
-    util/runlengthcodec.cc
-    util/runlengthcodec.h
-    util/simpletree.h
-    util/stack.h
-    util/string.cc
-    util/string.h
-    util/stringatom.h
-    util/variant.h
+    core/refcounted.cc
+    core/rtti.cc
+    core/factory.cc
+    util/string.cc 
+    io/posix/posixconsolehandler.cc
+    io/posix/posixfswrapper.cc
+    io/consolehandler.cc 
+    core/coreserver.cc
+    threading/posix/posixthread.cc
+    core/posix/posixsysfunc.cc
+    util/blob.cc 
+    memory/posix/posixheap.cc
+    util/posix/posixguid.cc
 )
 
-IF(WIN32)
-    SET(Nebula3Foundation_SRCS
-        ${Nebula3Foundation_SRCS}
-        core/win32/precompiled.h
-        core/win32/win32singleton.h
-        core/win32/win32sysfunc.cc
-        core/win32/win32sysfunc.h
-        debug/win32/win32minidump.cc
-        debug/win32/win32minidump.h
-        io/win32/win32consolehandler.cc
-        io/win32/win32consolehandler.h
-        io/win32/win32filetime.h
-        io/win32/win32fswrapper.cc
-        io/win32/win32fswrapper.h
-        math/d3dx9/d3dx9_float4.h
-        math/d3dx9/d3dx9_matrix44.h
-        math/d3dx9/d3dx9_plane.h
-        math/d3dx9/d3dx9_point.h
-        math/d3dx9/d3dx9_quaternion.h
-        math/d3dx9/d3dx9_scalar.h
-        math/d3dx9/d3dx9_vector.h
-        memory/win32/win32heap.cc
-        memory/win32/win32heap.h
-        memory/win32/win32memory.cc
-        memory/win32/win32memory.h
-        net/win32/win32ipaddress.cc
-        net/win32/win32ipaddress.h
-        net/win32/win32socket.cc
-        net/win32/win32socket.h
-        system/win32/win32registry.cc
-        system/win32/win32registry.h
-        threading/win32/win32barrier.h
-        threading/win32/win32criticalsection.h
-        threading/win32/win32event.h
-        threading/win32/win32interlocked.h
-        threading/win32/win32thread.cc
-        threading/win32/win32thread.h
-        timing/win32/win32calendartime.cc
-        timing/win32/win32calendartime.h
-        timing/win32/win32timer.cc
-        timing/win32/win32timer.h
-        util/win32/win32guid.cc
-        util/win32/win32guid.h
-       )
-ENDIF(WIN32)
+set(HEADERS
+)
 
-IF(APPLE)
-    SET(Nebula3Foundation_SRCS
-        ${Nebula3Foundation_SRCS}
-        core/posix/posixsingleton.h
-        core/posix/posixsysfunc.cc
-        core/posix/posixsysfunc.h
-        core/posix/precompiled.h
-        io/posix/posixconsolehandler.cc
-        io/posix/posixconsolehandler.h
-        io/posix/posixfiletime.h
-        io/posix/posixfswrapper.cc
-        io/posix/posixfswrapper.h
-        math/sce/sce_float4.cc
-        math/sce/sce_float4.h
-        math/sce/sce_matrix44.cc
-        math/sce/sce_matrix44.h
-        math/sce/sce_plane.cc
-        math/sce/sce_plane.h
-        math/sce/sce_point.h
-        math/sce/sce_scalar.h
-        math/sce/sce_vector.h
-        memory/posix/posixheap.cc
-        memory/posix/posixheap.h
-        memory/posix/posixmemory.cc
-        memory/posix/posixmemory.h
-        memory/posix/posixmemoryconfig.cc
-        memory/posix/posixmemoryconfig.h
-        net/posix/posixipaddress.cc
-        net/posix/posixipaddress.h
-        net/posix/posixsocket.cc
-        net/posix/posixsocket.h
-        system/darwin/darwinbyteorder.h
-        system/darwin/darwinsysteminfo.cc
-        system/darwin/darwinsysteminfo.h
-        threading/darwin/darwininterlocked.h
-        threading/posix/posixbarrier.h
-        threading/posix/posixcriticalsection.h
-        threading/posix/posixevent.h
-        threading/posix/posixthread.cc
-        threading/posix/posixthread.h
-        timing/darwin/darwintimer.cc
-        timing/darwin/darwintimer.h
-        timing/posix/posixcalendartime.cc
-        timing/posix/posixcalendartime.h
-        util/posix/posixguid.cc
-        util/posix/posixguid.h
-       )
-ENDIF(APPLE)
+include(cotire)
+include_directories("${PROJECT_SOURCE_DIR}")
 
-SOURCE_GROUP(Attributes REGULAR_EXPRESSION attr/.*)
-SOURCE_GROUP(Core REGULAR_EXPRESSION core/.*)
-SOURCE_GROUP(Debug REGULAR_EXPRESSION debug/.*)
-SOURCE_GROUP(IO REGULAR_EXPRESSION io/.*)
-SOURCE_GROUP(Math REGULAR_EXPRESSION math/.*)
-SOURCE_GROUP(Memory REGULAR_EXPRESSION memory/.*)
-SOURCE_GROUP(Messaging REGULAR_EXPRESSION messaging/.*)
-SOURCE_GROUP(System REGULAR_EXPRESSION system/.*)
-SOURCE_GROUP(Threading REGULAR_EXPRESSION threading/.*)
-SOURCE_GROUP(Timing REGULAR_EXPRESSION timing/.*)
-SOURCE_GROUP(Util REGULAR_EXPRESSION util/.*)
-
-ADD_LIBRARY(Nebula3Foundation ${Nebula3Foundation_SRCS})
-
+add_library(foundation ${SOURCES})
+set_target_properties(foundation PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "stdneb.h")
+cotire(foundation)
