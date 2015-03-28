@@ -11,9 +11,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-inline-new-delete -Wno-deprecated-d
 include(cotire)
 include(xplatform)
 
-include_directories("${PROJECT_SOURCE_DIR}/foundation")
-include_directories("${PROJECT_SOURCE_DIR}/../platforms/${XPLATFORM_NAME}/zlib-1.2.8/include")
-link_directories("${PROJECT_SOURCE_DIR}/../platforms/${XPLATFORM_NAME}/zlib-1.2.8/lib/static")
+include_directories("${CMAKE_SOURCE_DIR}/foundation")
+
+include_directories("${XPLATFORM_DIR}/zlib-1.2.8/include")
+link_directories("${XPLATFORM_DIR}/zlib-1.2.8/lib/static")
+
+include_directories("${XPLATFORM_DIR}/tinyxml-2.6.2/include")
+link_directories("${XPLATFORM_DIR}/tinyxml-2.6.2/lib/static")
 
 add_subdirectory(foundation)
 
