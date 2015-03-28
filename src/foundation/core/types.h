@@ -37,6 +37,8 @@ static const unsigned int InvalidIndex = 0xffffffff;
 #define N_XRGB(r,g,b)   N_ARGB(0xff,r,g,b)
 #define N_COLORVALUE(r,g,b,a) N_RGBA((uint)((r)*255.f),(uint)((g)*255.f),(uint)((b)*255.f),(uint)((a)*255.f))
 
+#define fprint(str, fp) fputs(fp, str)
+
 #if __WIN32__
 #define n_stricmp stricmp
 #define n_snprintf StringCchPrintf

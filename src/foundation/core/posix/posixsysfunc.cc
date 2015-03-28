@@ -63,7 +63,7 @@ SysFunc::Exit(int exitCode)
 void
 SysFunc::Error(const char* error)
 {
-    fprintf(stderr, error);
+    fprint(stderr, error);
     abort();
 }
 
@@ -101,7 +101,7 @@ SysFunc::GetLastError()
 void
 SysFunc::DebugOut(const char* msg)
 {
-    fprintf(stderr, msg);
+    fprint(stderr, msg);
 }
 
 } // namespace Posix
