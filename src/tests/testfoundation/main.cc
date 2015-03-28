@@ -9,6 +9,7 @@
 #include "testbase/testrunner.h"
 #include "stringtest.h"
 #include "arraytest.h"
+#include "atomtest.h"
 
 #if TODO
 #include "stacktest.h"
@@ -37,7 +38,6 @@
 #include "zipfstest.h"
 #include "attributecontainertest.h"
 #include "proxytest.h"
-#include "atomtest.h"
 #include "float4test.h"
 #include "matrix44test.h"
 #include "threadtest.h"
@@ -64,6 +64,7 @@ __cdecl main()
     // setup and run test runner
     Ptr<TestRunner> testRunner = TestRunner::Create();
     testRunner->AttachTestCase(ArrayTest::Create());
+    testRunner->AttachTestCase(AtomTest::Create());
     testRunner->AttachTestCase(StringTest::Create());   
 #ifdef TODO
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
@@ -72,7 +73,6 @@ __cdecl main()
     testRunner->AttachTestCase(MemoryPoolTest::Create());
     testRunner->AttachTestCase(Matrix44Test::Create());
     testRunner->AttachTestCase(Float4Test::Create());
-    testRunner->AttachTestCase(AtomTest::Create());
     testRunner->AttachTestCase(ProxyTest::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ZipFSTest::Create());
