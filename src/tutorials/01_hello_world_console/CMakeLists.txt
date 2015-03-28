@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 2.8)
 
 project(HelloWorldConsole)
 
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../../cmake")
+if(NOT CMAKE_MODULE_PATH)
+    set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../../cmake")
+endif()
 
 set(SOURCES
     stdneb.cc 
