@@ -8,9 +8,9 @@
 #include "core/sysfunc.h"
 #include "testbase/testrunner.h"
 #include "stringtest.h"
+#include "arraytest.h"
 
 #if TODO
-#include "arraytest.h"
 #include "stacktest.h"
 #include "listtest.h"
 #include "dictionarytest.h"
@@ -63,6 +63,7 @@ __cdecl main()
 
     // setup and run test runner
     Ptr<TestRunner> testRunner = TestRunner::Create();
+    testRunner->AttachTestCase(ArrayTest::Create());
     testRunner->AttachTestCase(StringTest::Create());   
 #ifdef TODO
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
@@ -81,7 +82,6 @@ __cdecl main()
     testRunner->AttachTestCase(AttributeTableTest::Create());
     testRunner->AttachTestCase(MediaTypeTest::Create());
     testRunner->AttachTestCase(URITest::Create());
-    testRunner->AttachTestCase(ArrayTest::Create());
     testRunner->AttachTestCase(StackTest::Create());
     testRunner->AttachTestCase(ListTest::Create());
     testRunner->AttachTestCase(DictionaryTest::Create());

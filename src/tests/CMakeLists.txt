@@ -23,6 +23,7 @@ add_library(NebulaXTestBase
 
 add_executable(NebulaXTestFoundation
     testfoundation/main.cc
+    testfoundation/arraytest.cc
     testfoundation/stringtest.cc)
 
 target_link_libraries(NebulaXTestFoundation 
