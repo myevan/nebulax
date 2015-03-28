@@ -24,6 +24,10 @@ set(COMMON_SOURCES
     util/string.cc 
     util/cmdlineargs.cc
     util/runlengthcodec.cc
+    #interface/base/iointerfacehandlerbase.cc
+    #interface/interfaceprotocol.cc
+    #interface/iointerface.cc
+    #interface/iointerfacehandler.cc
     #memory/memorypool.cc
     #memory/debug/memorypagehandler.cc
     #memory/memorypoolpage.cc
@@ -45,10 +49,6 @@ set(COMMON_SOURCES
     #http/httpresponsewriter.cc
     #http/httpserver.cc
     #http/httpstatus.cc
-    #interface/base/iointerfacehandlerbase.cc
-    #interface/interfaceprotocol.cc
-    #interface/iointerface.cc
-    #interface/iointerfacehandler.cc
     #io/console.cc
     #io/consolehandler.cc
     #io/debug/iopagehandler.cc

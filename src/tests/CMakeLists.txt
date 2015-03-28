@@ -30,6 +30,8 @@ add_executable(NebulaXTestFoundation
     testfoundation/memorystreamtest.cc
     testfoundation/fileservertest.cc
     testfoundation/streamservertest.cc
+    testfoundation/mediatypetest.cc
+    #testfoundation/iointerfacetest.cc
     #testfoundation/memorypooltest.cc
     #testfoundation/uritest.cc
     #testfoundation/float4test.cc
@@ -38,9 +40,7 @@ add_executable(NebulaXTestFoundation
     #testfoundation/attributetabletest.cc
 
     #testfoundation/excelxmlreadertest.cc
-    #testfoundation/iointerfacetest.cc
     #testfoundation/luaservertest.cc
-    #testfoundation/mediatypetest.cc
     #testfoundation/messagereaderwritertest.cc
     #testfoundation/simpletreetest.cc
     #testfoundation/testattrs.cc

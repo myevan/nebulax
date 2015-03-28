@@ -29,8 +29,10 @@
 #include "memorystreamtest.h"
 #include "fileservertest.h"
 #include "streamservertest.h"
+#include "mediatypetest.h"
 
 #if TODO
+#include "iointerfacetest.h"
 #include "memorypooltest.h"
 #include "float4test.h"
 #include "matrix44test.h"
@@ -39,8 +41,6 @@
 #include "messagereaderwritertest.h"
 #include "xmlreaderwritertest.h"
 #include "uritest.h"
-#include "mediatypetest.h"
-#include "iointerfacetest.h"
 #include "attributetabletest.h"
 #include "luaservertest.h"
 #include "zipfstest.h"
@@ -85,7 +85,9 @@ __cdecl main()
     testRunner->AttachTestCase(MemoryStreamTest::Create());
     testRunner->AttachTestCase(FileServerTest::Create());
     testRunner->AttachTestCase(StreamServerTest::Create());
+    testRunner->AttachTestCase(MediaTypeTest::Create());
 #ifdef TODO
+    testRunner->AttachTestCase(IOInterfaceTest::Create());
     testRunner->AttachTestCase(MemoryPoolTest::Create());
     testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(Float4Test::Create());
@@ -95,10 +97,8 @@ __cdecl main()
     testRunner->AttachTestCase(ZipFSTest::Create());
     testRunner->AttachTestCase(LuaServerTest::Create());
     testRunner->AttachTestCase(AttributeTableTest::Create());
-    testRunner->AttachTestCase(MediaTypeTest::Create());
     testRunner->AttachTestCase(MessageReaderWriterTest::Create());
     testRunner->AttachTestCase(XmlReaderWriterTest::Create());
-    testRunner->AttachTestCase(IOInterfaceTest::Create());
 #endif
     testRunner->Run(); 
 
