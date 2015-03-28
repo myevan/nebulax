@@ -49,8 +49,6 @@ set(COMMON_SOURCES
     #http/httpresponsewriter.cc
     #http/httpserver.cc
     #http/httpstatus.cc
-    #io/console.cc
-    #io/consolehandler.cc
     #io/debug/iopagehandler.cc
     #io/excelxmlreader.cc
     #io/xmlreader.cc

@@ -30,12 +30,12 @@
 #include "fileservertest.h"
 #include "streamservertest.h"
 #include "mediatypetest.h"
+#include "float4test.h"
+#include "matrix44test.h"
 
 #if TODO
 #include "iointerfacetest.h"
 #include "memorypooltest.h"
-#include "float4test.h"
-#include "matrix44test.h"
 #include "attributecontainertest.h"
 
 #include "messagereaderwritertest.h"
@@ -86,12 +86,12 @@ __cdecl main()
     testRunner->AttachTestCase(FileServerTest::Create());
     testRunner->AttachTestCase(StreamServerTest::Create());
     testRunner->AttachTestCase(MediaTypeTest::Create());
+    testRunner->AttachTestCase(Float4Test::Create());
+    testRunner->AttachTestCase(Matrix44Test::Create());
 #ifdef TODO
     testRunner->AttachTestCase(IOInterfaceTest::Create());
     testRunner->AttachTestCase(MemoryPoolTest::Create());
     testRunner->AttachTestCase(URITest::Create());
-    testRunner->AttachTestCase(Float4Test::Create());
-    testRunner->AttachTestCase(Matrix44Test::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
     testRunner->AttachTestCase(ZipFSTest::Create());
