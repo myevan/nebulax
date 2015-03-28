@@ -26,6 +26,7 @@ add_executable(NebulaXTestFoundation
     testfoundation/stringtest.cc
     testfoundation/atomtest.cc
     testfoundation/arraytest.cc
+    testfoundation/listtest.cc
     testfoundation/dictionarytest.cc
     testfoundation/hashtabletest.cc
     #testfoundation/attributecontainertest.cc
@@ -39,7 +40,6 @@ add_executable(NebulaXTestFoundation
     #testfoundation/float4test.cc
     #testfoundation/guidtest.cc
     #testfoundation/iointerfacetest.cc
-    #testfoundation/listtest.cc
     #testfoundation/luaservertest.cc
     #testfoundation/matrix44test.cc
     #testfoundation/mediatypetest.cc
