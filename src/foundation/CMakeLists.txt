@@ -98,16 +98,19 @@ if (APPLE)
         core/posix/posixsysfunc.cc
         io/posix/posixconsolehandler.cc
         io/posix/posixfswrapper.cc
-        memory/posix/posixheap.cc
-        memory/posix/posixmemory.cc
-        memory/posix/posixmemoryconfig.cc
-        system/darwin/darwinsysteminfo.cc
-        threading/posix/posixthread.cc
-        timing/darwin/darwintimer.cc
-        util/posix/posixguid.cc
         math/sce/sce_float4.cc
         math/sce/sce_matrix44.cc
         math/sce/sce_plane.cc
+        memory/posix/posixheap.cc
+        memory/posix/posixmemory.cc
+        memory/posix/posixmemoryconfig.cc
+        #net/posix/posixipaddress.cc
+        #net/posix/posixsocket.cc
+        system/darwin/darwinsysteminfo.cc
+        threading/posix/posixthread.cc
+        timing/darwin/darwintimer.cc
+        timing/posix/posixcalendartime.cc
+        util/posix/posixguid.cc
     )
 endif()
 
