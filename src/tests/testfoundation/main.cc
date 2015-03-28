@@ -17,12 +17,13 @@
 #include "hashtabletest.h"
 #include "fixedarraytest.h"
 #include "fixedtabletest.h"
+#include "guidtest.h"
 
 #if TODO
+#include "cmdlineargstest.h"
 #include "attributecontainertest.h"
 
 #include "memorystreamtest.h"
-#include "guidtest.h"
 #include "fileservertest.h"
 #include "uritest.h"
 #include "textreaderwritertest.h"
@@ -34,7 +35,6 @@
 #include "varianttest.h"
 #include "iointerfacetest.h"
 #include "attributetabletest.h"
-#include "cmdlineargstest.h"
 #include "streamservertest.h"
 #include "luaservertest.h"
 #include "zipfstest.h"
@@ -73,7 +73,9 @@ __cdecl main()
     testRunner->AttachTestCase(HashTableTest::Create());
     testRunner->AttachTestCase(FixedArrayTest::Create());
     testRunner->AttachTestCase(FixedTableTest::Create());
+    testRunner->AttachTestCase(GuidTest::Create());
 #ifdef TODO
+    testRunner->AttachTestCase(CmdLineArgsTest::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
     testRunner->AttachTestCase(RingBufferTest::Create());
@@ -85,13 +87,11 @@ __cdecl main()
     testRunner->AttachTestCase(ZipFSTest::Create());
     testRunner->AttachTestCase(LuaServerTest::Create());
     testRunner->AttachTestCase(StreamServerTest::Create());
-    testRunner->AttachTestCase(CmdLineArgsTest::Create());
     testRunner->AttachTestCase(AttributeTableTest::Create());
     testRunner->AttachTestCase(MediaTypeTest::Create());
     testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(QueueTest::Create());
     testRunner->AttachTestCase(MemoryStreamTest::Create());
-    testRunner->AttachTestCase(GuidTest::Create());
     testRunner->AttachTestCase(FileServerTest::Create());
     testRunner->AttachTestCase(TextReaderWriterTest::Create());
     testRunner->AttachTestCase(MessageReaderWriterTest::Create());
