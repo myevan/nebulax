@@ -24,9 +24,10 @@ add_library(NebulaXTestBase
 add_executable(NebulaXTestFoundation
     testfoundation/main.cc
     testfoundation/stringtest.cc
+    testfoundation/atomtest.cc
     testfoundation/arraytest.cc
     testfoundation/dictionarytest.cc
-    testfoundation/atomtest.cc
+    testfoundation/hashtabletest.cc
     #testfoundation/attributecontainertest.cc
     #testfoundation/attributetabletest.cc
     #testfoundation/binaryreaderwritertest.cc
@@ -37,7 +38,6 @@ add_executable(NebulaXTestFoundation
     #testfoundation/fixedtabletest.cc
     #testfoundation/float4test.cc
     #testfoundation/guidtest.cc
-    #testfoundation/hashtabletest.cc
     #testfoundation/iointerfacetest.cc
     #testfoundation/listtest.cc
     #testfoundation/luaservertest.cc

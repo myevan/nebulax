@@ -8,9 +8,10 @@
 #include "core/sysfunc.h"
 #include "testbase/testrunner.h"
 #include "stringtest.h"
+#include "atomtest.h"
 #include "arraytest.h"
 #include "dictionarytest.h"
-#include "atomtest.h"
+#include "hashtabletest.h"
 
 #if TODO
 #include "attributecontainertest.h"
@@ -19,7 +20,6 @@
 #include "listtest.h"
 #include "fixedarraytest.h"
 #include "fixedtabletest.h"
-#include "hashtabletest.h"
 #include "queuetest.h"
 #include "memorystreamtest.h"
 #include "guidtest.h"
@@ -65,9 +65,10 @@ __cdecl main()
     // setup and run test runner
     Ptr<TestRunner> testRunner = TestRunner::Create();
     testRunner->AttachTestCase(StringTest::Create());   
+    testRunner->AttachTestCase(AtomTest::Create());
     testRunner->AttachTestCase(ArrayTest::Create());
     testRunner->AttachTestCase(DictionaryTest::Create());
-    testRunner->AttachTestCase(AtomTest::Create());
+    testRunner->AttachTestCase(HashTableTest::Create());
 #ifdef TODO
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
@@ -88,7 +89,6 @@ __cdecl main()
     testRunner->AttachTestCase(ListTest::Create());
     testRunner->AttachTestCase(FixedArrayTest::Create());
     testRunner->AttachTestCase(FixedTableTest::Create());
-    testRunner->AttachTestCase(HashTableTest::Create());
     testRunner->AttachTestCase(QueueTest::Create());
     testRunner->AttachTestCase(MemoryStreamTest::Create());
     testRunner->AttachTestCase(GuidTest::Create());
