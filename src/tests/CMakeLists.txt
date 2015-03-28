@@ -33,8 +33,10 @@ add_executable(NebulaXTestFoundation
     testfoundation/hashtabletest.cc
     testfoundation/fixedarraytest.cc
     testfoundation/fixedtabletest.cc
+    testfoundation/ringbuffertest.cc
     testfoundation/guidtest.cc
     testfoundation/varianttest.cc
+    #testfoundation/runlengthcodectest.cc
     #testfoundation/uritest.cc
     #testfoundation/float4test.cc
     #testfoundation/matrix44test.cc
@@ -52,8 +54,6 @@ add_executable(NebulaXTestFoundation
     #testfoundation/memorystreamtest.cc
     #testfoundation/messagereaderwritertest.cc
     #testfoundation/proxytest.cc
-    #testfoundation/ringbuffertest.cc
-    #testfoundation/runlengthcodectest.cc
     #testfoundation/simpletreetest.cc
     #testfoundation/streamservertest.cc
     #testfoundation/testattrs.cc

@@ -30,7 +30,6 @@ set(COMMON_SOURCES
     #attr/attrid.cc
     #commands/iolibrary.cc
     #commands/stdlibrary.cc
-    #core/coreserver.cc
     #core/debug/corepagehandler.cc
     #core/refcountedlist.cc
     #http/base64writer.cc
@@ -98,7 +97,6 @@ set(COMMON_SOURCES
     #scripting/debug/scriptingpagehandler.cc
     #scripting/lua/luaserver.cc
     #scripting/scriptserver.cc
-    #stdneb.cc
     #system/base/systeminfobase.cc
     #threading/thread.cc
     #timing/base/calendartimebase.cc

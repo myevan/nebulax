@@ -17,10 +17,12 @@
 #include "hashtabletest.h"
 #include "fixedarraytest.h"
 #include "fixedtabletest.h"
+#include "ringbuffertest.h"
 #include "guidtest.h"
 #include "varianttest.h"
 
 #if TODO
+#include "runlengthcodectest.h"
 #include "uritest.h"
 #include "float4test.h"
 #include "matrix44test.h"
@@ -43,8 +45,6 @@
 #include "proxytest.h"
 #include "threadtest.h"
 #include "memorypooltest.h"
-#include "runlengthcodectest.h"
-#include "ringbuffertest.h"
 #include "excelxmlreadertest.h"
 #endif
 
@@ -73,17 +73,17 @@ __cdecl main()
     testRunner->AttachTestCase(HashTableTest::Create());
     testRunner->AttachTestCase(FixedArrayTest::Create());
     testRunner->AttachTestCase(FixedTableTest::Create());
+    testRunner->AttachTestCase(RingBufferTest::Create());
     testRunner->AttachTestCase(GuidTest::Create());
     testRunner->AttachTestCase(VariantTest::Create());
 #ifdef TODO
+    testRunner->AttachTestCase(RunLengthCodecTest::Create());
     testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(Float4Test::Create());
     testRunner->AttachTestCase(Matrix44Test::Create());
     testRunner->AttachTestCase(CmdLineArgsTest::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
-    testRunner->AttachTestCase(RingBufferTest::Create());
-    testRunner->AttachTestCase(RunLengthCodecTest::Create());
     testRunner->AttachTestCase(MemoryPoolTest::Create());
     testRunner->AttachTestCase(ProxyTest::Create());
     testRunner->AttachTestCase(ZipFSTest::Create());
