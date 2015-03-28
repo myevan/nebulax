@@ -1,7 +1,9 @@
 set(COMMON_SOURCES
     stdneb.cc 
     core/debug.cc
+    core/debug/corepagehandler.cc
     core/refcounted.cc
+    core/refcountedlist.cc
     core/rtti.cc
     core/factory.cc
     core/coreserver.cc
@@ -55,8 +57,6 @@ set(COMMON_SOURCES
     #attr/attrid.cc
     #commands/iolibrary.cc
     #commands/stdlibrary.cc
-    #core/debug/corepagehandler.cc
-    #core/refcountedlist.cc
     #http/base64writer.cc
     #http/defaulthttprequesthandler.cc
     #http/httprequest.cc
