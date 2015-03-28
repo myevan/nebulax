@@ -22,14 +22,13 @@
 #include "proxytest.h"
 #include "varianttest.h"
 #include "runlengthcodectest.h"
+#include "cmdlineargstest.h"
 
 #if TODO
 #include "threadtest.h"
 #include "memorypooltest.h"
-#include "uritest.h"
 #include "float4test.h"
 #include "matrix44test.h"
-#include "cmdlineargstest.h"
 #include "attributecontainertest.h"
 
 #include "memorystreamtest.h"
@@ -79,13 +78,13 @@ __cdecl main()
     testRunner->AttachTestCase(ProxyTest::Create());
     testRunner->AttachTestCase(VariantTest::Create());
     testRunner->AttachTestCase(RunLengthCodecTest::Create());
+    testRunner->AttachTestCase(CmdLineArgsTest::Create());
 #ifdef TODO
+    testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(ThreadTest::Create());
     testRunner->AttachTestCase(MemoryPoolTest::Create());
-    testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(Float4Test::Create());
     testRunner->AttachTestCase(Matrix44Test::Create());
-    testRunner->AttachTestCase(CmdLineArgsTest::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
     testRunner->AttachTestCase(ZipFSTest::Create());

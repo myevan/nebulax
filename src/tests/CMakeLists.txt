@@ -23,12 +23,12 @@ add_executable(NebulaXTestFoundation
     testfoundation/proxytest.cc
     testfoundation/varianttest.cc
     testfoundation/runlengthcodectest.cc
+    testfoundation/cmdlineargstest.cc
+    #testfoundation/uritest.cc
     #testfoundation/threadtest.cc
     #testfoundation/memorypooltest.cc
-    #testfoundation/uritest.cc
     #testfoundation/float4test.cc
     #testfoundation/matrix44test.cc
-    #testfoundation/cmdlineargstest.cc
     #testfoundation/attributecontainertest.cc
     #testfoundation/attributetabletest.cc
 
