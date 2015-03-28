@@ -9,20 +9,20 @@ endif()
 set(SOURCES
     stdneb.cc 
     core/debug.cc
-    memory/posix/posixmemory.cc
-    io/console.cc
     core/refcounted.cc
     core/rtti.cc
     core/factory.cc
-    util/string.cc 
+    core/coreserver.cc
+    core/posix/posixsysfunc.cc
+    io/console.cc
     io/posix/posixconsolehandler.cc
     io/posix/posixfswrapper.cc
     io/consolehandler.cc 
-    core/coreserver.cc
-    threading/posix/posixthread.cc
-    core/posix/posixsysfunc.cc
-    util/blob.cc 
+    memory/posix/posixmemory.cc
     memory/posix/posixheap.cc
+    threading/posix/posixthread.cc
+    util/blob.cc 
+    util/string.cc 
     util/posix/posixguid.cc)
 
 include(cotire)
