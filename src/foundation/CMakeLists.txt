@@ -27,11 +27,7 @@ set(SOURCES
     core/posix/posixsysfunc.cc
     util/blob.cc 
     memory/posix/posixheap.cc
-    util/posix/posixguid.cc
-)
-
-set(HEADERS
-)
+    util/posix/posixguid.cc)
 
 include(cotire)
 include_directories("${PROJECT_SOURCE_DIR}")
