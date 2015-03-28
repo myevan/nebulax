@@ -24,6 +24,7 @@ n_barf(const char* exp, const char* file, int line)
         str.Format("*** NEBULA ASSERTION ***\nexpression: %s\nfile: %s\nline: %d\n", exp, file, line);
         Core::SysFunc::Error(str.AsCharPtr());
     }
+    __builtin_unreachable();
 }
 
 //------------------------------------------------------------------------------
@@ -43,6 +44,7 @@ n_barf2(const char* exp, const char* msg, const char* file, int line)
         str.Format("*** NEBULA ASSERTION ***\nprogrammer says: %s\nexpression: %s\nfile: %s\nline: %d\n", msg, exp, file, line);
         Core::SysFunc::Error(str.AsCharPtr());
     }
+    __builtin_unreachable();
 }
 
 //------------------------------------------------------------------------------
@@ -66,6 +68,7 @@ n_error(const char* msg, ...)
         Core::SysFunc::Error(str.AsCharPtr());
     }
     va_end(argList);
+    __builtin_unreachable();
 }
 
 //------------------------------------------------------------------------------
