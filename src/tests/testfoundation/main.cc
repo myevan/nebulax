@@ -19,6 +19,7 @@
 #include "fixedtabletest.h"
 #include "ringbuffertest.h"
 #include "guidtest.h"
+#include "proxytest.h"
 #include "varianttest.h"
 
 #if TODO
@@ -42,7 +43,6 @@
 #include "streamservertest.h"
 #include "luaservertest.h"
 #include "zipfstest.h"
-#include "proxytest.h"
 #include "threadtest.h"
 #include "memorypooltest.h"
 #include "excelxmlreadertest.h"
@@ -76,6 +76,7 @@ __cdecl main()
     testRunner->AttachTestCase(FixedTableTest::Create());
     testRunner->AttachTestCase(RingBufferTest::Create());
     testRunner->AttachTestCase(GuidTest::Create());
+    testRunner->AttachTestCase(ProxyTest::Create());
     testRunner->AttachTestCase(VariantTest::Create());
 #ifdef TODO
     testRunner->AttachTestCase(RunLengthCodecTest::Create());
@@ -86,7 +87,6 @@ __cdecl main()
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
     testRunner->AttachTestCase(MemoryPoolTest::Create());
-    testRunner->AttachTestCase(ProxyTest::Create());
     testRunner->AttachTestCase(ZipFSTest::Create());
     testRunner->AttachTestCase(LuaServerTest::Create());
     testRunner->AttachTestCase(StreamServerTest::Create());
