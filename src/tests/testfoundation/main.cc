@@ -15,12 +15,12 @@
 #include "queuetest.h"
 #include "dictionarytest.h"
 #include "hashtabletest.h"
+#include "fixedarraytest.h"
+#include "fixedtabletest.h"
 
 #if TODO
 #include "attributecontainertest.h"
 
-#include "fixedarraytest.h"
-#include "fixedtabletest.h"
 #include "memorystreamtest.h"
 #include "guidtest.h"
 #include "fileservertest.h"
@@ -71,6 +71,8 @@ __cdecl main()
     testRunner->AttachTestCase(ListTest::Create());
     testRunner->AttachTestCase(DictionaryTest::Create());
     testRunner->AttachTestCase(HashTableTest::Create());
+    testRunner->AttachTestCase(FixedArrayTest::Create());
+    testRunner->AttachTestCase(FixedTableTest::Create());
 #ifdef TODO
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
@@ -87,8 +89,6 @@ __cdecl main()
     testRunner->AttachTestCase(AttributeTableTest::Create());
     testRunner->AttachTestCase(MediaTypeTest::Create());
     testRunner->AttachTestCase(URITest::Create());
-    testRunner->AttachTestCase(FixedArrayTest::Create());
-    testRunner->AttachTestCase(FixedTableTest::Create());
     testRunner->AttachTestCase(QueueTest::Create());
     testRunner->AttachTestCase(MemoryStreamTest::Create());
     testRunner->AttachTestCase(GuidTest::Create());

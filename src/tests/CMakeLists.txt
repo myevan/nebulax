@@ -31,14 +31,14 @@ add_executable(NebulaXTestFoundation
     testfoundation/queuetest.cc
     testfoundation/dictionarytest.cc
     testfoundation/hashtabletest.cc
+    testfoundation/fixedarraytest.cc
+    testfoundation/fixedtabletest.cc
     #testfoundation/attributecontainertest.cc
     #testfoundation/attributetabletest.cc
     #testfoundation/binaryreaderwritertest.cc
     #testfoundation/cmdlineargstest.cc
     #testfoundation/excelxmlreadertest.cc
     #testfoundation/fileservertest.cc
-    #testfoundation/fixedarraytest.cc
-    #testfoundation/fixedtabletest.cc
     #testfoundation/float4test.cc
     #testfoundation/guidtest.cc
     #testfoundation/iointerfacetest.cc

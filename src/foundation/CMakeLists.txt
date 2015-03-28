@@ -22,8 +22,11 @@ set(SOURCES
     memory/posix/posixheap.cc
     threading/posix/posixthread.cc
     util/blob.cc 
+    util/crc.cc
     util/string.cc 
     util/posix/posixguid.cc
+    util/cmdlineargs.cc
+    util/runlengthcodec.cc
     #app/application.cc
     #app/consoleapplication.cc
     #attr/attributecontainer.cc
@@ -34,11 +37,7 @@ set(SOURCES
     #commands/stdlibrary.cc
     #core/coreserver.cc
     #core/debug/corepagehandler.cc
-    #core/debug.cc
-    #core/factory.cc
-    #core/refcounted.cc
     #core/refcountedlist.cc
-    #core/rtti.cc
     #http/base64writer.cc
     #http/defaulthttprequesthandler.cc
     #http/httprequest.cc
@@ -110,11 +109,6 @@ set(SOURCES
     #system/base/systeminfobase.cc
     #threading/thread.cc
     #timing/base/calendartimebase.cc
-    #util/blob.cc
-    #util/cmdlineargs.cc
-    #util/crc.cc
-    #util/runlengthcodec.cc
-    #util/string.cc
 )
 
 include(cotire)
