@@ -23,6 +23,14 @@ set(COMMON_SOURCES
     io/zipfs/zipdirentry.cc
     io/zipfs/zipfileentry.cc
     io/zipfs/zipfilesystem.cc
+    messaging/asyncport.cc
+    messaging/dispatcher.cc
+    messaging/handler.cc
+    messaging/message.cc
+    messaging/messagereader.cc
+    messaging/messagewriter.cc
+    messaging/port.cc
+    system/base/systeminfobase.cc
     threading/thread.cc
     timing/base/calendartimebase.cc
     util/blob.cc 
@@ -62,13 +70,6 @@ set(COMMON_SOURCES
     #math/bbox.cc
     #math/line.cc
     #math/sphere_.cc
-    #messaging/asyncport.cc
-    #messaging/dispatcher.cc
-    #messaging/handler.cc
-    #messaging/message.cc
-    #messaging/messagereader.cc
-    #messaging/messagewriter.cc
-    #messaging/port.cc
     #net/socket.cc
     #net/tcpclient.cc
     #net/tcpclientconnection.cc
@@ -89,7 +90,6 @@ set(COMMON_SOURCES
     #scripting/debug/scriptingpagehandler.cc
     #scripting/lua/luaserver.cc
     #scripting/scriptserver.cc
-    #system/base/systeminfobase.cc
 )
 
 if (APPLE)
@@ -101,6 +101,7 @@ if (APPLE)
         memory/posix/posixheap.cc
         memory/posix/posixmemory.cc
         memory/posix/posixmemoryconfig.cc
+        system/darwin/darwinsysteminfo.cc
         threading/posix/posixthread.cc
         timing/darwin/darwintimer.cc
         util/posix/posixguid.cc
@@ -110,7 +111,7 @@ if (APPLE)
     )
 endif()
 
-add_definitions("-D__NOZIP__")
+#add_definitions("-D__NOZIP__")
 
 add_library(NebulaXFoundation ${SOURCES})
 set_target_properties(NebulaXFoundation PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "stdneb.h")

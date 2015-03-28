@@ -26,6 +26,7 @@
 #include "threadtest.h"
 #include "textreaderwritertest.h"
 #include "binaryreaderwritertest.h"
+#include "messagereaderwritertest.h"
 #include "memorystreamtest.h"
 #include "fileservertest.h"
 #include "streamservertest.h"
@@ -40,7 +41,6 @@
 #include "memorypooltest.h"
 #include "attributecontainertest.h"
 
-#include "messagereaderwritertest.h"
 #include "xmlreaderwritertest.h"
 #include "attributetabletest.h"
 #include "luaservertest.h"
@@ -82,6 +82,7 @@ __cdecl main()
     testRunner->AttachTestCase(ThreadTest::Create());
     testRunner->AttachTestCase(TextReaderWriterTest::Create());
     testRunner->AttachTestCase(BinaryReaderWriterTest::Create());
+    testRunner->AttachTestCase(MessageReaderWriterTest::Create());
     testRunner->AttachTestCase(MemoryStreamTest::Create());
     testRunner->AttachTestCase(FileServerTest::Create());
     testRunner->AttachTestCase(StreamServerTest::Create());
@@ -97,7 +98,6 @@ __cdecl main()
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
     testRunner->AttachTestCase(LuaServerTest::Create());
     testRunner->AttachTestCase(AttributeTableTest::Create());
-    testRunner->AttachTestCase(MessageReaderWriterTest::Create());
     testRunner->AttachTestCase(XmlReaderWriterTest::Create());
 #endif
     testRunner->Run(); 
