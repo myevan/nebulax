@@ -24,6 +24,7 @@ set(COMMON_SOURCES
     io/zipfs/zipfileentry.cc
     io/zipfs/zipfilesystem.cc
     threading/thread.cc
+    timing/base/calendartimebase.cc
     util/blob.cc 
     util/crc.cc
     util/string.cc 
@@ -89,7 +90,6 @@ set(COMMON_SOURCES
     #scripting/lua/luaserver.cc
     #scripting/scriptserver.cc
     #system/base/systeminfobase.cc
-    #timing/base/calendartimebase.cc
 )
 
 if (APPLE)
@@ -102,6 +102,7 @@ if (APPLE)
         memory/posix/posixmemory.cc
         memory/posix/posixmemoryconfig.cc
         threading/posix/posixthread.cc
+        timing/darwin/darwintimer.cc
         util/posix/posixguid.cc
         math/sce/sce_float4.cc
         math/sce/sce_matrix44.cc
