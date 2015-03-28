@@ -28,6 +28,7 @@ add_executable(NebulaXTestFoundation
     testfoundation/textreaderwritertest.cc
     testfoundation/binaryreaderwritertest.cc
     testfoundation/xmlreaderwritertest.cc
+    testfoundation/excelxmlreadertest.cc
     testfoundation/messagereaderwritertest.cc
     testfoundation/memorystreamtest.cc
     testfoundation/fileservertest.cc
@@ -42,7 +43,6 @@ add_executable(NebulaXTestFoundation
     #testfoundation/attributecontainertest.cc
     #testfoundation/attributetabletest.cc
 
-    #testfoundation/excelxmlreadertest.cc
     #testfoundation/luaservertest.cc
     #testfoundation/simpletreetest.cc
     #testfoundation/testattrs.cc
