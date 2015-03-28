@@ -5,6 +5,7 @@ project(HelloWorldTests)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../cmake")
 
 include(xplatform)
+include(nebulax)
 
 include_directories("${PROJECT_SOURCE_DIR}")
 include_directories("${PROJECT_SOURCE_DIR}/../foundation")
