@@ -13,6 +13,7 @@ include(xplatform)
 
 include_directories("${PROJECT_SOURCE_DIR}/foundation")
 include_directories("${PROJECT_SOURCE_DIR}/../platforms/${XPLATFORM_NAME}/zlib-1.2.8/include")
+link_directories("${PROJECT_SOURCE_DIR}/../platforms/${XPLATFORM_NAME}/zlib-1.2.8/lib/static")
 
 add_subdirectory(foundation)
 

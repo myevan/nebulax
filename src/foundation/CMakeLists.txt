@@ -18,6 +18,11 @@ set(COMMON_SOURCES
     io/textreader.cc
     io/textwriter.cc
     io/uri.cc
+    io/zipfilestream.cc
+    io/zipfs/ziparchive.cc
+    io/zipfs/zipdirentry.cc
+    io/zipfs/zipfileentry.cc
+    io/zipfs/zipfilesystem.cc
     threading/thread.cc
     util/blob.cc 
     util/crc.cc
@@ -53,11 +58,6 @@ set(COMMON_SOURCES
     #io/excelxmlreader.cc
     #io/xmlreader.cc
     #io/xmlwriter.cc
-    #io/zipfilestream.cc
-    #io/zipfs/ziparchive.cc
-    #io/zipfs/zipdirentry.cc
-    #io/zipfs/zipfileentry.cc
-    #io/zipfs/zipfilesystem.cc
     #math/bbox.cc
     #math/line.cc
     #math/sphere_.cc

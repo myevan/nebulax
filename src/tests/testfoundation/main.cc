@@ -33,6 +33,7 @@
 #include "float4test.h"
 #include "matrix44test.h"
 #include "uritest.h"
+#include "zipfstest.h"
 
 #if TODO
 #include "iointerfacetest.h"
@@ -43,7 +44,6 @@
 #include "xmlreaderwritertest.h"
 #include "attributetabletest.h"
 #include "luaservertest.h"
-#include "zipfstest.h"
 #include "excelxmlreadertest.h"
 #endif
 
@@ -89,12 +89,12 @@ __cdecl main()
     testRunner->AttachTestCase(Float4Test::Create());
     testRunner->AttachTestCase(Matrix44Test::Create());
     testRunner->AttachTestCase(URITest::Create());
+    testRunner->AttachTestCase(ZipFSTest::Create());
 #ifdef TODO
     testRunner->AttachTestCase(IOInterfaceTest::Create());
     testRunner->AttachTestCase(MemoryPoolTest::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
-    testRunner->AttachTestCase(ZipFSTest::Create());
     testRunner->AttachTestCase(LuaServerTest::Create());
     testRunner->AttachTestCase(AttributeTableTest::Create());
     testRunner->AttachTestCase(MessageReaderWriterTest::Create());

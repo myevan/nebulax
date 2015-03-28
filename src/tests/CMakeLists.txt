@@ -34,6 +34,7 @@ add_executable(NebulaXTestFoundation
     testfoundation/float4test.cc
     testfoundation/matrix44test.cc
     testfoundation/uritest.cc
+    testfoundation/zipfstest.cc
     #testfoundation/iointerfacetest.cc
     #testfoundation/memorypooltest.cc
     #testfoundation/attributecontainertest.cc
@@ -45,7 +46,6 @@ add_executable(NebulaXTestFoundation
     #testfoundation/simpletreetest.cc
     #testfoundation/testattrs.cc
     #testfoundation/xmlreaderwritertest.cc
-    #testfoundation/zipfstest.cc
 )
 
-target_link_libraries(NebulaXTestFoundation NebulaXFoundation NebulaXTestBase ${SYSTEM_LIBS})
+target_link_libraries(NebulaXTestFoundation NebulaXFoundation NebulaXTestBase z minizip ${SYSTEM_LIBS})
