@@ -32,6 +32,7 @@
 #include "mediatypetest.h"
 #include "float4test.h"
 #include "matrix44test.h"
+#include "uritest.h"
 
 #if TODO
 #include "iointerfacetest.h"
@@ -40,7 +41,6 @@
 
 #include "messagereaderwritertest.h"
 #include "xmlreaderwritertest.h"
-#include "uritest.h"
 #include "attributetabletest.h"
 #include "luaservertest.h"
 #include "zipfstest.h"
@@ -88,10 +88,10 @@ __cdecl main()
     testRunner->AttachTestCase(MediaTypeTest::Create());
     testRunner->AttachTestCase(Float4Test::Create());
     testRunner->AttachTestCase(Matrix44Test::Create());
+    testRunner->AttachTestCase(URITest::Create());
 #ifdef TODO
     testRunner->AttachTestCase(IOInterfaceTest::Create());
     testRunner->AttachTestCase(MemoryPoolTest::Create());
-    testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
     testRunner->AttachTestCase(ZipFSTest::Create());

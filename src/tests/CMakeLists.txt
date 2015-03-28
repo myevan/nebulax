@@ -33,9 +33,9 @@ add_executable(NebulaXTestFoundation
     testfoundation/mediatypetest.cc
     testfoundation/float4test.cc
     testfoundation/matrix44test.cc
+    testfoundation/uritest.cc
     #testfoundation/iointerfacetest.cc
     #testfoundation/memorypooltest.cc
-    #testfoundation/uritest.cc
     #testfoundation/attributecontainertest.cc
     #testfoundation/attributetabletest.cc
 
