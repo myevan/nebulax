@@ -11,10 +11,11 @@
     (C) 2006 Radon Labs GmbH
 */
 #include "core/refcounted.h"
-#include "zlib/unzip.h"
 #include "io/stream.h"
 #include "io/zipfs/zipfileentry.h"
 #include "io/zipfs/zipdirentry.h"
+
+#include <unzip.h>
 
 //------------------------------------------------------------------------------
 namespace IO

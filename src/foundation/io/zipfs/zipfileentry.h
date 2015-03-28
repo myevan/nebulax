@@ -11,7 +11,8 @@
 */    
 #include "core/refcounted.h"
 #include "io/stream.h"
-#include "zlib/unzip.h"
+
+#include <unzip.h>
 
 //------------------------------------------------------------------------------
 namespace IO
