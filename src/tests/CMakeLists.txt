@@ -25,16 +25,16 @@ add_executable(NebulaXTestFoundation
     testfoundation/runlengthcodectest.cc
     testfoundation/cmdlineargstest.cc
     testfoundation/threadtest.cc
-    testfoundation/memorystreamtest.cc
     testfoundation/textreaderwritertest.cc
-    #testfoundation/uritest.cc
+    testfoundation/binaryreaderwritertest.cc
+    testfoundation/memorystreamtest.cc
     #testfoundation/memorypooltest.cc
+    #testfoundation/uritest.cc
     #testfoundation/float4test.cc
     #testfoundation/matrix44test.cc
     #testfoundation/attributecontainertest.cc
     #testfoundation/attributetabletest.cc
 
-    #testfoundation/binaryreaderwritertest.cc
     #testfoundation/excelxmlreadertest.cc
     #testfoundation/fileservertest.cc
     #testfoundation/iointerfacetest.cc

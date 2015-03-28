@@ -24,8 +24,9 @@
 #include "runlengthcodectest.h"
 #include "cmdlineargstest.h"
 #include "threadtest.h"
-#include "memorystreamtest.h"
 #include "textreaderwritertest.h"
+#include "binaryreaderwritertest.h"
+#include "memorystreamtest.h"
 
 #if TODO
 #include "memorypooltest.h"
@@ -36,7 +37,6 @@
 #include "fileservertest.h"
 #include "messagereaderwritertest.h"
 #include "xmlreaderwritertest.h"
-#include "binaryreaderwritertest.h"
 #include "uritest.h"
 #include "mediatypetest.h"
 #include "iointerfacetest.h"
@@ -80,8 +80,9 @@ __cdecl main()
     testRunner->AttachTestCase(RunLengthCodecTest::Create());
     testRunner->AttachTestCase(CmdLineArgsTest::Create());
     testRunner->AttachTestCase(ThreadTest::Create());
-    testRunner->AttachTestCase(MemoryStreamTest::Create());
     testRunner->AttachTestCase(TextReaderWriterTest::Create());
+    testRunner->AttachTestCase(BinaryReaderWriterTest::Create());
+    testRunner->AttachTestCase(MemoryStreamTest::Create());
 #ifdef TODO
     testRunner->AttachTestCase(MemoryPoolTest::Create());
     testRunner->AttachTestCase(URITest::Create());
@@ -97,7 +98,6 @@ __cdecl main()
     testRunner->AttachTestCase(FileServerTest::Create());
     testRunner->AttachTestCase(MessageReaderWriterTest::Create());
     testRunner->AttachTestCase(XmlReaderWriterTest::Create());
-    testRunner->AttachTestCase(BinaryReaderWriterTest::Create());
     testRunner->AttachTestCase(IOInterfaceTest::Create());
 #endif
     testRunner->Run(); 

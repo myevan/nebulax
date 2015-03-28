@@ -24,8 +24,8 @@ set(COMMON_SOURCES
     util/string.cc 
     util/cmdlineargs.cc
     util/runlengthcodec.cc
-    #memory/debug/memorypagehandler.cc
     #memory/memorypool.cc
+    #memory/debug/memorypagehandler.cc
     #memory/memorypoolpage.cc
     #app/application.cc
     #app/consoleapplication.cc
