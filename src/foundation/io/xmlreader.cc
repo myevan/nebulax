@@ -55,15 +55,24 @@ XmlReader::Open()
 
     if (StreamReader::Open())
     {
+        size_t xmlCharSize = this->stream->GetSize();
+        char* xmlChars = (char*)Memory::Alloc(Memory::ScratchHeap, xmlCharSize + 1);
+        this->stream->Read(xmlChars, xmlCharSize);
+        xmlChars[xmlCharSize] = '\0';
+
         // create an XML document object
         this->xmlDocument = n_new(TiXmlDocument);
-        if (!this->xmlDocument->LoadStream(this->stream))
+        if (!this->xmlDocument->Parse(xmlChars, 0, TIXML_DEFAULT_ENCODING))
         {
+            n_error("XmlReader::Open(): failed to open stream as XML '%s'! Error:%s", this->stream->GetURI().AsString().AsCharPtr(), this->xmlDocument->ErrorDesc());
+
+            Memory::Free(Memory::ScratchHeap, xmlChars);
             n_delete(this->xmlDocument);
             this->xmlDocument = 0;
-            n_error("XmlReader::Open(): failed to open stream as XML '%s'!", this->stream->GetURI().AsString().AsCharPtr());
             return false;
         }
+
+        Memory::Free(Memory::ScratchHeap, xmlChars);
 
         // set the current node to the root node
         this->curNode = this->xmlDocument->RootElement();
@@ -566,7 +575,7 @@ XmlReader::HasContent() const
     n_assert(this->IsOpen());
     n_assert(0 != this->curNode);
     TiXmlNode* child = this->curNode->FirstChild();
-    return child && (child->Type() == TiXmlNode::TEXT);
+    return child && (child->Type() == TiXmlNode::TINYXML_TEXT);
 }
 
 //------------------------------------------------------------------------------
@@ -578,7 +587,7 @@ XmlReader::GetContent() const
     n_assert(this->IsOpen());
     n_assert(this->curNode);
     TiXmlNode* child = this->curNode->FirstChild();
-    n_assert(child->Type() == TiXmlNode::TEXT);
+    n_assert(child->Type() == TiXmlNode::TINYXML_TEXT);
     return child->Value();
 }
 

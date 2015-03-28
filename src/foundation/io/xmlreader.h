@@ -15,7 +15,8 @@
 #include "math/float4.h"
 #include "math/float2.h"
 #include "math/matrix44.h"
-#include "tinyxml/tinyxml.h"
+
+#include <tinyxml.h>
 
 //------------------------------------------------------------------------------
 namespace IO

@@ -67,7 +67,9 @@ XmlWriter::Close()
     n_assert(0 != this->xmlDocument);
 
     // write XML data to stream
-    this->xmlDocument->SaveStream(this->stream);
+    TiXmlPrinter xmlPrinter;
+    this->xmlDocument->Accept(&xmlPrinter);
+    this->stream->Write(xmlPrinter.CStr(), xmlPrinter.Size());
     
     // delete the XML document object
     n_delete(this->xmlDocument);

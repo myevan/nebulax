@@ -27,6 +27,7 @@ add_executable(NebulaXTestFoundation
     testfoundation/threadtest.cc
     testfoundation/textreaderwritertest.cc
     testfoundation/binaryreaderwritertest.cc
+    testfoundation/xmlreaderwritertest.cc
     testfoundation/messagereaderwritertest.cc
     testfoundation/memorystreamtest.cc
     testfoundation/fileservertest.cc
@@ -45,7 +46,6 @@ add_executable(NebulaXTestFoundation
     #testfoundation/luaservertest.cc
     #testfoundation/simpletreetest.cc
     #testfoundation/testattrs.cc
-    #testfoundation/xmlreaderwritertest.cc
 )
 
-target_link_libraries(NebulaXTestFoundation NebulaXFoundation NebulaXTestBase z minizip ${SYSTEM_LIBS})
+target_link_libraries(NebulaXTestFoundation NebulaXFoundation NebulaXTestBase z minizip tinyxml ${SYSTEM_LIBS})
