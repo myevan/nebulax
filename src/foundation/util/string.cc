@@ -429,9 +429,9 @@ String::SubstituteString(const String& matchStr, const String& substStr)
 void
 String::UTF8toANSI()
 {
-    char* src = const_cast<char*>(this->AsCharPtr());
-    char* dst = src;
-    char c;
+    uchar* src = (uchar*)(const_cast<char*>(this->AsCharPtr()));
+    uchar* dst = src;
+    uchar c;
     while (0 != (c = *src++))
     {
         if (c >= 0x80)
@@ -446,7 +446,7 @@ String::UTF8toANSI()
                 }
                 else
                 {
-                    c = (char) wide;
+                    c = (uchar) wide;
                 }
             }
             else if ((c & 0xF0) == 0xE0)
@@ -488,10 +488,10 @@ String::ANSItoUTF8()
 {
     n_assert(!this->IsEmpty());
     SizeT bufSize = this->strLen * 2 + 1;
-    char* buffer = (char*) Memory::Alloc(Memory::ScratchHeap, bufSize);
-    char* dstPtr = buffer;
-    const char* srcPtr = this->AsCharPtr();
-    unsigned char c;
+    uchar* buffer = (uchar*) Memory::Alloc(Memory::ScratchHeap, bufSize);
+    uchar* dstPtr = buffer;
+    const uchar* srcPtr = (const uchar*)(this->AsCharPtr());
+    uchar c;
     while (0 != (c = *srcPtr++))
     {
         // note: this only covers the 2 cases that the character
@@ -507,7 +507,7 @@ String::ANSItoUTF8()
         }
     }
     *dstPtr = 0;
-    this->SetCharPtr(buffer);
+    this->SetCharPtr((const char*)buffer);
     Memory::Free(Memory::ScratchHeap, buffer);
 }
 
