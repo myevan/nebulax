@@ -9,12 +9,14 @@
 #include "testbase/testrunner.h"
 #include "stringtest.h"
 #include "arraytest.h"
+#include "dictionarytest.h"
 #include "atomtest.h"
 
 #if TODO
+#include "attributecontainertest.h"
+
 #include "stacktest.h"
 #include "listtest.h"
-#include "dictionarytest.h"
 #include "fixedarraytest.h"
 #include "fixedtabletest.h"
 #include "hashtabletest.h"
@@ -36,7 +38,6 @@
 #include "streamservertest.h"
 #include "luaservertest.h"
 #include "zipfstest.h"
-#include "attributecontainertest.h"
 #include "proxytest.h"
 #include "float4test.h"
 #include "matrix44test.h"
@@ -63,10 +64,12 @@ __cdecl main()
 
     // setup and run test runner
     Ptr<TestRunner> testRunner = TestRunner::Create();
-    testRunner->AttachTestCase(ArrayTest::Create());
-    testRunner->AttachTestCase(AtomTest::Create());
     testRunner->AttachTestCase(StringTest::Create());   
+    testRunner->AttachTestCase(ArrayTest::Create());
+    testRunner->AttachTestCase(DictionaryTest::Create());
+    testRunner->AttachTestCase(AtomTest::Create());
 #ifdef TODO
+    testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ExcelXmlReaderTest::Create());
     testRunner->AttachTestCase(RingBufferTest::Create());
     testRunner->AttachTestCase(RunLengthCodecTest::Create());
@@ -74,7 +77,6 @@ __cdecl main()
     testRunner->AttachTestCase(Matrix44Test::Create());
     testRunner->AttachTestCase(Float4Test::Create());
     testRunner->AttachTestCase(ProxyTest::Create());
-    testRunner->AttachTestCase(AttributeContainerTest::Create());
     testRunner->AttachTestCase(ZipFSTest::Create());
     testRunner->AttachTestCase(LuaServerTest::Create());
     testRunner->AttachTestCase(StreamServerTest::Create());
@@ -84,7 +86,6 @@ __cdecl main()
     testRunner->AttachTestCase(URITest::Create());
     testRunner->AttachTestCase(StackTest::Create());
     testRunner->AttachTestCase(ListTest::Create());
-    testRunner->AttachTestCase(DictionaryTest::Create());
     testRunner->AttachTestCase(FixedArrayTest::Create());
     testRunner->AttachTestCase(FixedTableTest::Create());
     testRunner->AttachTestCase(HashTableTest::Create());

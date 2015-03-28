@@ -23,9 +23,44 @@ add_library(NebulaXTestBase
 
 add_executable(NebulaXTestFoundation
     testfoundation/main.cc
+    testfoundation/stringtest.cc
     testfoundation/arraytest.cc
+    testfoundation/dictionarytest.cc
     testfoundation/atomtest.cc
-    testfoundation/stringtest.cc)
+    #testfoundation/attributecontainertest.cc
+    #testfoundation/attributetabletest.cc
+    #testfoundation/binaryreaderwritertest.cc
+    #testfoundation/cmdlineargstest.cc
+    #testfoundation/excelxmlreadertest.cc
+    #testfoundation/fileservertest.cc
+    #testfoundation/fixedarraytest.cc
+    #testfoundation/fixedtabletest.cc
+    #testfoundation/float4test.cc
+    #testfoundation/guidtest.cc
+    #testfoundation/hashtabletest.cc
+    #testfoundation/iointerfacetest.cc
+    #testfoundation/listtest.cc
+    #testfoundation/luaservertest.cc
+    #testfoundation/matrix44test.cc
+    #testfoundation/mediatypetest.cc
+    #testfoundation/memorypooltest.cc
+    #testfoundation/memorystreamtest.cc
+    #testfoundation/messagereaderwritertest.cc
+    #testfoundation/proxytest.cc
+    #testfoundation/queuetest.cc
+    #testfoundation/ringbuffertest.cc
+    #testfoundation/runlengthcodectest.cc
+    #testfoundation/simpletreetest.cc
+    #testfoundation/stacktest.cc
+    #testfoundation/streamservertest.cc
+    #testfoundation/testattrs.cc
+    #testfoundation/textreaderwritertest.cc
+    #testfoundation/threadtest.cc
+    #testfoundation/uritest.cc
+    #testfoundation/varianttest.cc
+    #testfoundation/xmlreaderwritertest.cc
+    #testfoundation/zipfstest.cc
+)
 
 target_link_libraries(NebulaXTestFoundation 
     NebulaXFoundation${CMAKE_DEBUG_POSTFIX} 
