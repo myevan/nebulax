@@ -12,6 +12,7 @@
 #include "arraytest.h"
 #include "stacktest.h"
 #include "listtest.h"
+#include "queuetest.h"
 #include "dictionarytest.h"
 #include "hashtabletest.h"
 
@@ -20,7 +21,6 @@
 
 #include "fixedarraytest.h"
 #include "fixedtabletest.h"
-#include "queuetest.h"
 #include "memorystreamtest.h"
 #include "guidtest.h"
 #include "fileservertest.h"
