@@ -1,14 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(foundation)
-
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE "Debug")
-    message("No CMAKE_BUILD_TYPE specified, defaulting to ${CMAKE_BUILD_TYPE}")
-endif()
+project(NebulaXFoundation)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../cmake")
-set(CMAKE_DEBUG_POSTFIX "_d")
 
 set(SOURCES
     stdneb.cc 
@@ -30,8 +24,9 @@ set(SOURCES
     util/posix/posixguid.cc)
 
 include(cotire)
+include(xplatform)
 include_directories("${PROJECT_SOURCE_DIR}")
 
-add_library(foundation ${SOURCES})
-set_target_properties(foundation PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "stdneb.h")
-cotire(foundation)
+add_library(NebulaXFoundation ${SOURCES})
+set_target_properties(NebulaXFoundation PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "stdneb.h")
+cotire(NebulaXFoundation)
